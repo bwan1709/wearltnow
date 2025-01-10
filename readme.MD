@@ -27,7 +27,7 @@ To get started with the project, ensure you have the following prerequisites ins
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repository.git
+   git clone https://github.com/bwan1709/wearltnow.git
    ```
 
 2. Navigate to the project directory:
