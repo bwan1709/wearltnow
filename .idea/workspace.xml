@@ -118,7 +118,7 @@
     "Spring Boot.WearltNow.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/All Data/Study/DuAnTotNghiep/WearItNow/src/test/java/com/wearltnow/service",
+    "last_opened_file_path": "D:/All Data/Study/DuAnTotNghiep/Weartnow-backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -481,6 +481,7 @@
       <workItem from="1735446100755" duration="1795000" />
       <workItem from="1736512162497" duration="1458000" />
       <workItem from="1736514775084" duration="5000" />
+      <workItem from="1736514865663" duration="156000" />
     </task>
     <task id="LOCAL-00066" summary="code moi">
       <option name="closed" value="true" />

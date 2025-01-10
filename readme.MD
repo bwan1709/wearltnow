@@ -27,7 +27,7 @@ To get started with the project, ensure you have the following prerequisites ins
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/bwan1709/wearltnow.git
+   git clone https://github.com/yourusername/your-repository.git
    ```
 
 2. Navigate to the project directory:
@@ -55,6 +55,16 @@ To get started with the project, ensure you have the following prerequisites ins
    ```
    http://localhost:8000
    ```
+
+### Running SQL Files
+
+- To set up the database schema, run the SQL files located in the `src/database` directory.
+- Example command to execute an SQL file:
+  ```bash
+  mysql -u <username> -p <password> < database_name < src/database/schema.sql
+  ```
+
+Replace `<username>`, `<password>`, and `<database_name>` with your MySQL credentials and the desired database name.
 
 ---
 
