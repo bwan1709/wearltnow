@@ -1,0 +1,3568 @@
+{
+	"info": {
+		"_postman_id": "035db6c9-d067-4c46-abef-6858d6fbd173",
+		"name": "WearltNow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36991430"
+	},
+	"item": [
+		{
+			"name": "UserApi",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzM4MTk4MDIsImlhdCI6MTczMzgxNjIwMiwianRpIjoiNTg4MjZiNDktNmU3NS00ODhhLWEzOTUtMjFkNzgzMjYwOTRlIn0.SgruY7MCwSaf80GzyWH9_80FNs_tLJ-GA1Me4H3VmJpdm_ADsCf7SxFelID8sHcfmGZIfGcw6yd0ZNPFd4Hcvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dev\",\r\n    \"password\" : \"1234678ss\",\r\n    \"firstname\": \"Quan\",\r\n    \"lastname\": \"Hoang\",\r\n    \"phone\"   : \"09213124243\",\r\n    \"email\" : \"hoangbinhquan17@gmail.com\",\r\n    \"gender\":\"true\",\r\n    \"dob\": \"2000-09-09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/users",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Quan\",\r\n    \"lastname\": \"Hoang\",\r\n    \"phone\"   : \"09213124243\",\r\n    \"roles\" : [\"CUSTOMER\"],\r\n    \"email\" : \"qua2ssn@gmail.com\",\r\n    \"gender\":\"true\",\r\n    \"dob\": \"2000-09-09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/34",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"34"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/users/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3Mjg4OTE4NjQsImlhdCI6MTcyODg4ODI2NCwianRpIjoiNWNmNjNkYWMtYzIwOC00Zjc1LWJkMGMtZDg1MDNlOWE5MDkzIn0.jwWrnGL435DOsXCXT7O46m14OFr9SLVZLbRjJCGzn0OyQ3B8yMFckgKJiKZ0d-fKVnw8dAnlrStlBn9sujn92A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ3ZWFybHRub3cuY29tIiwic3ViIjoiYWRtaW4iLCJleHAiOjE3Mjc4ODE0NzcsImlhdCI6MTcyNzg3Nzg3NywianRpIjoiMTljYmU1MGMtNmI2ZC00YTg5LWE2YjktYTM2Nzc1NjM0ZTFkIiwic2NvcGUiOiJST0xFX0RJUkVDVE9SIFVQREFURV9EQVRBIn0.wpakMF-F-0IO8kZYcFHFHx2yAXA7wT_qmUDu_tK5tVfu1N65L5sfMP2G6kAgYWaCFeD-EnQAf-dC4rfh-Yg0PQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/users/myInfo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"myInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/change-password/34",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"change-password",
+								"34"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserAddressGroup",
+			"item": [
+				{
+					"name": "Create User Address",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"toName\": \"Nguyễn Văn A\",\r\n    \"toPhone\": \"0979337725\",\r\n    \"toWardCode\": \"20308\",\r\n    \"toAddress\": \"123 Đường ABC, Phường XYZ, Quận 1, TP.HCM\",\r\n    \"toDistrictId\": 1444,\r\n    \"toWardName\": \"Phường B\",\r\n    \"toDistrictName\": \"Quận A\",\r\n    \"toProvinceId\": 12345,\r\n    \"toProvinceName\": \"TP HCM\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user-address",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Address By UserId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user-address/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user-address",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 2,\r\n  \"toName\": \"Nguyễn Văn B\",\r\n  \"toPhone\": \"0987654321\",\r\n  \"toWardCode\": \"01A\",\r\n  \"toAddress\": \"Số 10, đường ABC, phường XYZ\",\r\n  \"toDistrictId\": 1,\r\n  \"toWardName\": \"Ward Name\",\r\n  \"toDistrictName\": \"District Name\",\r\n  \"toProvinceId\": 10,\r\n  \"toProvinceName\": \"Province Name\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/user-address/12",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"user-address",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"userId\" : 1,\r\n    \"toName\": \"Nguyễn Văn C\",\r\n    \"toPhone\": \"0979337725\",\r\n    \"toWardCode\": \"20308\",\r\n    \"toAddress\": \"123 Đường ABC, Phường XYZ, Quận 1, TP.HCM\",\r\n    \"toDistrictId\": 1444\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user-address/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user-address",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Address Status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/user-address/5/status",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"user-address",
+								"5",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get address active by userId",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Introspect Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ3ZWFybHRub3cuY29tIiwic3ViIjoicXVhbm5ldzMiLCJleHAiOjE3MjcyNzA4OTgsImlhdCI6MTcyNzI2NzI5OH0.JA9U3fReCrL963f5qkpnxI8-4nwF5oKxh6IJMUdiUPKXxeRgncvpRJ3RCXlwipu0AqhuR-1O2pXsEGcI-4TwhQ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/introspect",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"introspect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdGFmZiIsInNjb3BlIjoiUk9MRV9TVEFGRiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzE5NDIxMzksImlhdCI6MTczMTkzODUzOSwianRpIjoiYjc2MTVlODMtZTgzNi00NGE2LTk4Y2YtM2FhMjJhNjdkMjYxIn0.66dm4XbS6GuLACmFXb4MimPo6f8tT3SKRg8o2-XF37goSGXMibksBLRqvoyFfN2_2xb02UDjS9p8HiDvSJENGA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/refresh",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiBDUkVBVEVfREFUQSBVUERBVEVfREFUQSBST0xFX0NVU1RPTUVSIiwiaXNzIjoid2Vhcmx0bm93LmNvbSIsImV4cCI6MTcyOTY5NTg5MywiaWF0IjoxNzI5NjkyMjkzLCJqdGkiOiI1ZDUyMTczOS04YTdhLTRhMTEtYjBhNy00NjJkZGY3N2Q1YjgifQ.lEG_Vw9p7-1gZsz6VysxPm6JILHjdN2jJEZHJzYnSCjn0bg4ZwdNpSdcf5cpLOz2HyPFU1IhFU7p0t77oMEfbA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "vi",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"quanhbps3dsadsa4514@fpt.edu.vn\",\r\n    \"username\": \"truongKH1\",\r\n    \"password\": \"123456789\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify-Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hoangbinhquan179@gmail.com\",\r\n    \"otp\" : \"266911\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/verify-otp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ForgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"hoangbinhquan179@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/auth/forgot-password",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify ForgotPassword Otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"hoangbinhquan179@gmail.com\",\r\n    \"otp\": \"950082\",\r\n    \"newPassword\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/auth/verify-forgot-password-otp",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"verify-forgot-password-otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "Create Permission",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"CREATE_DATA\",\r\n    \"description\": \"Create data permission\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/permissions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Permission",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/permissions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"permissions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ3ZWFybHRub3cuY29tIiwic3ViIjoiYWRtaW4iLCJleHAiOjE3Mjc0MzY0NjQsImlhdCI6MTcyNzQzMjg2NCwic2NvcGUiOiIifQ.VMuhoqcbaYi9QeL5j7iMWHbV38ayP4n-rtjmpW5wHMCwQoqS1hWg-nICo8FyaNDQQ73TZSZJlfnpq-oE2L4L7g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/permissions/UPDATE_DATA",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"permissions",
+								"UPDATE_DATA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Create Role_Permission",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"DIRECTOR\",\r\n    \"permissions\": [\"UPDATE_DATA\",\"CREATE_DATA\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/permission_roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"permission_roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Role_User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"name\": \"DIRECTOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user_roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user_roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Role_Permissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/roles",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role_Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJ3ZWFybHRub3cuY29tIiwic3ViIjoiYWRtaW4iLCJleHAiOjE3Mjc0MzY0NjQsImlhdCI6MTcyNzQzMjg2NCwic2NvcGUiOiIifQ.VMuhoqcbaYi9QeL5j7iMWHbV38ayP4n-rtjmpW5wHMCwQoqS1hWg-nICo8FyaNDQQ73TZSZJlfnpq-oE2L4L7g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/permissions/UPDATE_DATA",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"permissions",
+								"UPDATE_DATA"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create_Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzM4ODYwNzcsImlhdCI6MTczMzg4MjQ3NywianRpIjoiOTg4NWRlNGQtYmVjZC00ZTM5LTg5YTctZTQ5MGQ0MzM5ZTcwIn0.v_mLNSQhp-TXKjTOewCIU-bLxzJM3dO96Oh3PFYKg4Tp2WIkqt661ewJI3bWg8DULChRSvy-4EFK4abagXtbnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Thời trang nam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "199.99",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Thời trang dành cho người biết thưởng thức sắc đẹp 3",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "categoryId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localJava}}/api/products",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzM4ODYwNzcsImlhdCI6MTczMzg4MjQ3NywianRpIjoiOTg4NWRlNGQtYmVjZC00ZTM5LTg5YTctZTQ5MGQ0MzM5ZTcwIn0.v_mLNSQhp-TXKjTOewCIU-bLxzJM3dO96Oh3PFYKg4Tp2WIkqt661ewJI3bWg8DULChRSvy-4EFK4abagXtbnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Áo Khoác sweater",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "199.99",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Áo khoác sweater cá tính, phù hợp cho những buổi dạo phố hay những dịp không chính thức.",
+									"type": "text"
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "categoryId",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/LOQ/Pictures/Screenshots/4.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{localJava}}/api/products/31",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Product Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/products/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_All_Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS1wY2NjLm5ld3dlYi52bi9hdXRoL2xvZ2luIiwiaWF0IjoxNzM2MjMyNzI4LCJleHAiOjE3Njc3Njg3MjgsIm5iZiI6MTczNjIzMjcyOCwianRpIjoialc0T3JJa2VpRjVQZFBaYSIsInN1YiI6IjM3IiwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSJ9.Z3nC_R50R6mMXHmq4wFyy9Hyk61i0DNsqajWlwMBq8k"
+							},
+							{
+								"key": "caches",
+								"value": "no-caches"
+							},
+							{
+								"key": "if-none-match",
+								"value": "W/\"203308630eb95a4d01c6833c4ab2770077dba093\""
+							},
+							{
+								"key": "origin",
+								"value": "https://admin-baoduy.newweb.vn"
+							},
+							{
+								"key": "priority",
+								"value": "u=1, i"
+							},
+							{
+								"key": "referer",
+								"value": "https://admin-baoduy.newweb.vn/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Microsoft Edge\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"Windows\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0"
+							},
+							{
+								"key": "x-api-key",
+								"value": "88"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"code\": \"sub_total_before_tax\",\r\n        \"text\": \"73,200,000 đ\",\r\n        \"title\": \"Tổng tiền hàng trước thuế\",\r\n        \"value\": 73200000\r\n    },\r\n    {\r\n        \"code\": \"sub_total\",\r\n        \"text\": \"73,200,000 đ\",\r\n        \"title\": \"Tổng tiền hàng sau thuế\",\r\n        \"value\": 73200000\r\n    },\r\n    {\r\n        \"code\": \"total_before_tax\",\r\n        \"text\": \"73,200,000 đ\",\r\n        \"title\": \"Tổng thanh toán trước thuế\",\r\n        \"value\": 73200000\r\n    },\r\n    {\r\n        \"code\": \"total\",\r\n        \"text\": \"73,200,000 đ\",\r\n        \"title\": \"Tổng thanh toán sau thuế\",\r\n        \"value\": 73200000\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api-pccc.newweb.vn/v1/shipping-units?company_id=62&limit=20&page=1&sort%5Bupdated_at%5D=desc&store_id=88&transport_type=1",
+							"protocol": "https",
+							"host": [
+								"api-pccc",
+								"newweb",
+								"vn"
+							],
+							"path": [
+								"v1",
+								"shipping-units"
+							],
+							"query": [
+								{
+									"key": "company_id",
+									"value": "62"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort%5Bupdated_at%5D",
+									"value": "desc"
+								},
+								{
+									"key": "store_id",
+									"value": "88"
+								},
+								{
+									"key": "transport_type",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Discounted_Products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{localJava}}/api/products/discounted",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"discounted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Slug_Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/products/thoi-trang-nam",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"thoi-trang-nam"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_One_Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/products/productdetail/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"productdetail",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Create_Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test\",\r\n    \"description\": \"test.\",\r\n    \"status\": true,\r\n    \"slug\": \"thoi-trang\",\r\n    \"parentId\": null,\r\n    \"supplierId\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/categories",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update_Category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Downloads/OIP.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/categories/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_All_Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/categories",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Slug_Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/categories/thoi-trang-be-trai",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"thoi-trang-be-trai"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/categories/7",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"categories",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Giao hàng nhanh",
+					"item": [
+						{
+							"name": "OrderGhn",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "ShopId",
+										"value": "194821"
+									},
+									{
+										"key": "Token",
+										"value": "32620eea-8b9f-11ef-8e53-0a00184fe694"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n                                    \"payment_type_id\": 2,\n                                    \"note\": \"Tintest 123\",\n                                    \"required_note\": \"KHONGCHOXEMHANG\",\n                                    \"from_name\": \"TinTest124\",\n                                    \"from_phone\": \"0987654321\",\n                                    \"from_address\": \"72 Thành Thái, Phường 14, Quận 10, Hồ Chí Minh, Vietnam\",\n                                    \"from_ward_name\": \"Phường 14\",\n                                    \"from_district_name\": \"Quận 10\",\n                                    \"from_province_name\": \"HCM\",\n                                    \"return_phone\": \"0332190444\",\n                                    \"return_address\": \"39 NTT\",\n                                    \"return_district_id\": null,\n                                    \"return_ward_code\": \"\",\n                                    \"client_order_code\": \"\",\n                                    \"to_name\": \"TinTest124\",\n                                    \"to_phone\": \"0987654321\",\n                                    \"to_address\": \"72 Thành Thái, Phường 14, Quận 10, Hồ Chí Minh, Vietnam\",\n                                    \"to_ward_code\": \"20308\",\n                                    \"to_district_id\": 1444,\n                                    \"cod_amount\": 200000,\n                                    \"content\": \"Theo New York Times\",\n                                    \"weight\": 200,\n                                    \"length\": 1,\n                                    \"width\": 19,\n                                    \"height\": 10,\n                                    \"pick_station_id\": 1444,\n                                    \"deliver_station_id\": null,\n                                    \"insurance_value\": 100000,\n                                    \"service_id\": 0,\n                                    \"service_type_id\":5,\n                                    \"coupon\":null,\n                                    \"pick_shift\":[2],\n                                    \"items\": [\n                                         {\n                                             \"name\":\"Áo Polo\",\n                                             \"code\":\"Polo123\",\n                                             \"quantity\": 1,\n                                             \"price\": 200000,\n                                             \"length\": 12,\n                                             \"width\": 12,\n                                             \"height\": 12,\n                                             \"weight\": 1200,\n                                             \"category\": \n                                             {\n                                                 \"level1\":\"Áo\"\n                                             }\n                                         }\n                                         \n                                     ]\n                                }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/create",
+									"protocol": "https",
+									"host": [
+										"dev-online-gateway",
+										"ghn",
+										"vn"
+									],
+									"path": [
+										"shiip",
+										"public-api",
+										"v2",
+										"shipping-order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OrderUpdate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "ShopId",
+										"value": "194821"
+									},
+									{
+										"key": "Token",
+										"value": "32620eea-8b9f-11ef-8e53-0a00184fe694"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"note\":\"nhớ gọi 30p khi giao\",\"order_code\":\"LNYFRN\", \"status\": \"picked\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/update",
+									"protocol": "https",
+									"host": [
+										"dev-online-gateway",
+										"ghn",
+										"vn"
+									],
+									"path": [
+										"shiip",
+										"public-api",
+										"v2",
+										"shipping-order",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "OrderGhnDetail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "ShopId",
+										"value": "194821"
+									},
+									{
+										"key": "Token",
+										"value": "32620eea-8b9f-11ef-8e53-0a00184fe694"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"order_code\":\"LDLT3B\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/detail",
+									"protocol": "https",
+									"host": [
+										"dev-online-gateway",
+										"ghn",
+										"vn"
+									],
+									"path": [
+										"shiip",
+										"public-api",
+										"v2",
+										"shipping-order",
+										"detail"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"checkoutRequest\": {\n        \"userId\": 16,\n        \"paymentMethodId\": 2,\n        \"serviceTypeId\": 2,\n        \"discountCode\": null,\n        \"items\": [\n            {\n                \"productId\": 18,\n                \"quantity\": 1,\n                \"size\": \"S\",\n                \"color\": \"Green\"\n            }\n        ]\n    },\n    \"addressRequest\": {\n        \"toName\": \"nguyễn trung hiếu\",\n        \"toPhone\": \"0905191840\",\n        \"toWardCode\": \"380706\",\n        \"toAddress\": \"thôn thánh giáo, Xã Ia Krêl, Huyện Đức Cơ, Gia Lai\",\n        \"toDistrictId\": 1794\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Order",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/orders?orderCode",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "orderCode",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Order By UserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/orders/7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 1,\r\n    \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/orders/10/confirm",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"10",
+								"confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/orders/10/status?newStatus=SHIPPED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"orders",
+								"10",
+								"status"
+							],
+							"query": [
+								{
+									"key": "newStatus",
+									"value": "SHIPPED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status Client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/orders/164/client/status?newStatus=DELIVERED&userId=7",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"164",
+								"client",
+								"status"
+							],
+							"query": [
+								{
+									"key": "newStatus",
+									"value": "DELIVERED"
+								},
+								{
+									"key": "userId",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shipping",
+			"item": [
+				{
+					"name": "Api Tỉnh-Thành Phố",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "565e8728-8b8b-11ef-b0a6-2ec00785cbbf",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://online-gateway.ghn.vn/shiip/public-api/master-data/province",
+							"protocol": "https",
+							"host": [
+								"online-gateway",
+								"ghn",
+								"vn"
+							],
+							"path": [
+								"shiip",
+								"public-api",
+								"master-data",
+								"province"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api Quận-Huyện",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "565e8728-8b8b-11ef-b0a6-2ec00785cbbf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"province_id\" : 202\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online-gateway.ghn.vn/shiip/public-api/master-data/district",
+							"protocol": "https",
+							"host": [
+								"online-gateway",
+								"ghn",
+								"vn"
+							],
+							"path": [
+								"shiip",
+								"public-api",
+								"master-data",
+								"district"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Api Phường - Xã",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "565e8728-8b8b-11ef-b0a6-2ec00785cbbf",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"district_id\": 1461\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://online-gateway.ghn.vn/shiip/public-api/master-data/ward",
+							"protocol": "https",
+							"host": [
+								"online-gateway",
+								"ghn",
+								"vn"
+							],
+							"path": [
+								"shiip",
+								"public-api",
+								"master-data",
+								"ward"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Các dịch vụ  giao hàng khả dụng",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "32620eea-8b9f-11ef-8e53-0a00184fe694",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shop_id\": 194821,\r\n    \"from_district\": 2264,\r\n    \"to_district\" : 1447\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/available-services",
+							"protocol": "https",
+							"host": [
+								"dev-online-gateway",
+								"ghn",
+								"vn"
+							],
+							"path": [
+								"shiip",
+								"public-api",
+								"v2",
+								"shipping-order",
+								"available-services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tính giá cước vận chuyển",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Token",
+								"value": "32620eea-8b9f-11ef-8e53-0a00184fe694"
+							},
+							{
+								"key": "ShopId",
+								"value": "194821"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service_type_id\":5,\n    \"from_district_id\":1442,\n    \"to_district_id\":1820,\n    \"from_ward_code\": \"21316\",\n    \"to_ward_code\":\"030712\",\n    \"height\":20,\n    \"length\":30,\n    \"weight\":3000,\n    \"width\":40,\n    \"insurance_value\":0,\n    \"coupon\": null,\n    \"items\": [\n            {\n                \"name\": \"TEST1\",\n                \"quantity\": 1,\n                \"height\": 200,\n                \"weight\": 1000,\n                \"length\": 200,\n                \"width\": 200\n            }\n                ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee",
+							"protocol": "https",
+							"host": [
+								"dev-online-gateway",
+								"ghn",
+								"vn"
+							],
+							"path": [
+								"shiip",
+								"public-api",
+								"v2",
+								"shipping-order",
+								"fee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail service fee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "ShopID",
+								"value": "194821"
+							},
+							{
+								"key": "Token",
+								"value": "32620eea-8b9f-11ef-8e53-0a00184fe694"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"order_code\":\"LDLT3B\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/soc",
+							"protocol": "https",
+							"host": [
+								"dev-online-gateway",
+								"ghn",
+								"vn"
+							],
+							"path": [
+								"shiip",
+								"public-api",
+								"v2",
+								"shipping-order",
+								"soc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "available-services",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "32620eea-8b9f-11ef-8e53-0a00184fe694"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                \"shop_id\":194821,\n                \"from_district\": 1447,\n                \"to_district\": 1441\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dev-online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/available-services",
+							"protocol": "https",
+							"host": [
+								"dev-online-gateway",
+								"ghn",
+								"vn"
+							],
+							"path": [
+								"shiip",
+								"public-api",
+								"v2",
+								"shipping-order",
+								"available-services"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductInventory",
+			"item": [
+				{
+					"name": "Tạo tồn kho sản phẩm",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"color\": \"Blue\",\r\n    \"size\": \"L\",\r\n    \"quantity\": 50,\r\n    \"purchasePrice\": 100000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/inventories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy danh sách tồn kho của sản phẩm",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/inventories/product/6",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"inventories",
+								"product",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQzNTk0NDUsImlhdCI6MTczNDM1NTg0NSwianRpIjoiNDE4ZjJiOWYtYmYwMS00YmNlLTljMTktNjhkYTIxZmUwZTc1In0.R1MJPjCnUsID0HYhk-2_6Kb8f3_wKeUTwl_BMTM5U6pTFoeugRVDDtyh-1uOpbVgJKOu8VyvxqUySVjMXd4VgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/inventories/export",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"inventories",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ALl",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/inventories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"inventories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "New Folder",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All PaymentType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/payments/payment-types",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"payment-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateQR",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 12\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/payments/createQR",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"createQR"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderId\": 12\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/payments/75/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"75",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/payments/status/50?paymentStatus=PAIDBYCASH",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"payments",
+								"status",
+								"50"
+							],
+							"query": [
+								{
+									"key": "paymentStatus",
+									"value": "PAIDBYCASH"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "New Request",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/comments/product/18",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"product",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 18,\r\n    \"userId\":1,\r\n    \"content\": \"tuyệt vời\",\r\n    \"rate\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/comments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Thêm sản phẩm vào giỏ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"productId\": 1,\r\n        \"quantity\": 2,\r\n        \"size\": \"L\",\r\n        \"color\": \"Blue\"\r\n    },\r\n    {\r\n        \"productId\": 1,\r\n        \"quantity\": 2,\r\n        \"size\": \"M\",\r\n        \"color\": \"Red\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/v0/cart/save?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v0",
+								"cart",
+								"save"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa sản phẩm khỏi giỏ hàng",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v0/cart/remove/product/1?userId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v0",
+								"cart",
+								"remove",
+								"product",
+								"1"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Xóa sản phẩm khỏi giỏ hàng Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/v0/cart/remove/1?userId=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v0",
+								"cart",
+								"remove",
+								"1"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lấy sản phẩm theo userId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/v0/cart/get?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"v0",
+								"cart",
+								"get"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Statistics",
+			"item": [
+				{
+					"name": "Tổng đơn hàng",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "note:\r\n    truyền param: \r\n     @RequestParam(required = false)\r\n            @DateTimeFormat(pattern = \"yyyy-MM-dd\") LocalDate fromDate,\r\n            @RequestParam(required = false)\r\n            @DateTimeFormat(pattern = \"yyyy-MM-dd\") LocalDate toDate,\r\n            @RequestParam(required = false) Long customerId,\r\n            @RequestParam(required = false) Long productId",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/statistics/orders?fromDate=2024-11-01&toDate=2024-11-29",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2024-11-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2024-11-29"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tổng doanh thu",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "note:\r\n    truyền param: \r\n     @RequestParam(required = false)\r\n            @DateTimeFormat(pattern = \"yyyy-MM-dd\") LocalDate fromDate,\r\n            @RequestParam(required = false)\r\n            @DateTimeFormat(pattern = \"yyyy-MM-dd\") LocalDate toDate,\r\n            @RequestParam(required = false) Long customerId,\r\n            @RequestParam(required = false) Long productId",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/statistics/revenue?productId=1&fromDate=2024-11-01&toDate=2024-11-29",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"revenue"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "1"
+								},
+								{
+									"key": "fromDate",
+									"value": "2024-11-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2024-11-29"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tổng khách hàng",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "note:\r\n    truyền param: \r\n     @RequestParam(required = false)\r\n            @DateTimeFormat(pattern = \"yyyy-MM-dd\") LocalDate fromsDate,\r\n            @RequestParam(required = false)\r\n            @DateTimeFormat(pattern = \"yyyy-MM-dd\") LocalDate toDate",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/statistics/customers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Khách hàng mới",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/statistics/new-customers?fromDate=2024-01-10&toDate=2024-11-11",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"new-customers"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2024-01-10"
+								},
+								{
+									"key": "toDate",
+									"value": "2024-11-11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sản phẩm được bán trong ngày khoảng time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.wearltnow.online/api/statistics/product-quantity?fromDate=2024-01-01&toDate=2024-11-11&productId=3",
+							"protocol": "https",
+							"host": [
+								"api",
+								"wearltnow",
+								"online"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"product-quantity"
+							],
+							"query": [
+								{
+									"key": "fromDate",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2024-11-11"
+								},
+								{
+									"key": "productId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/statistics/top-products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"top-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tổng số lượng bán ra theo danh mục",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/statistics/quantity-by-categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"statistics",
+								"quantity-by-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top sản phẩm bán ế nhất",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Discount",
+			"item": [
+				{
+					"name": "Tạo mã giảm giá cho user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"GIAMGIA30%FORALL\",\r\n    \"amount\": 30000,\r\n    \"type\": \"PERCENTAGE\",\r\n    \"startDate\": \"2024-11-08T00:00:00\", \r\n    \"endDate\": \"2024-12-08T00:00:00\", \r\n    \"userGroupId\": 6,\r\n    \"minOrderValue\": 100000,\r\n    \"usageLimit\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/discount-codes/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"discount-codes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all mã giảm giá khả dụng cho user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/discount-codes/user/20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"discount-codes",
+								"user",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all mã giảm giá khả dụng cho user Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/discount-codes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"discount-codes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Áp mã giảm giá cho user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//  @PathVariable Long discountCodeId,\r\n//  @RequestBody List<Long> userIds\r\n\r\n// List này là list userId\r\n[1, 2, 3]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/discount-codes/5/users",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"discount-codes",
+								"5",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "discount",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserGroup",
+			"item": [
+				{
+					"name": "Thêm nhóm đối tượng",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQzNTk0NDUsImlhdCI6MTczNDM1NTg0NSwianRpIjoiNDE4ZjJiOWYtYmYwMS00YmNlLTljMTktNjhkYTIxZmUwZTc1In0.R1MJPjCnUsID0HYhk-2_6Kb8f3_wKeUTwl_BMTM5U6pTFoeugRVDDtyh-1uOpbVgJKOu8VyvxqUySVjMXd4VgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/user-groups/create?name=New",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"user-groups",
+								"create"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "New"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQzNzIxMTAsImlhdCI6MTczNDM2ODUxMCwianRpIjoiZjI3ZDJiMTgtNzA4NC00OWZjLWI3MjctZjQ5OWUyNjk1ZGE4In0.VAlb4cNQtByiz3RSOPNlzkpX1lwDwXmvP-TEaL1EE1xhQOVTiIbl5IqLkinLlczv4a8M49ePgvrp4r-imR2JRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/user-groups/all",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user-groups",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Supplier",
+			"item": [
+				{
+					"name": "Create Supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Kho miền Nam\",\r\n    \"email\": \"mienbac@gmail.com\",\r\n    \"contactPerson\": \"Anh Nam\",\r\n    \"name\": \"Supplier Name\",\r\n    \"website\": \"https://example.com\",\r\n    \"phone\": \"+1234567890\",\r\n    \"taxCode\": \"123456789\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/suppliers",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all suppliers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/suppliers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one supplier by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/suppliers/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"suppliers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Supplier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Kho miền Tay\",\r\n    \"contactPerson\": \"Anh Tay\",\r\n    \"name\": \"Supplier Name\",\r\n    \"website\": \"https://example.com\",\r\n    \"phone\": \"+1234567890\",\r\n    \"taxCode\": \"123456789\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/suppliers/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"suppliers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Supplier",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/suppliers/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"suppliers",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Comment",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/comments/product/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 1,\r\n    \"userId\": 1,\r\n    \"content\": \"test\",\r\n    \"rate\" : 1,\r\n    \"parentId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/comments",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Favorite",
+			"item": [
+				{
+					"name": "Add product to favorite",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/favorites/add?userId=1&productId=19",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"favorites",
+								"add"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "productId",
+									"value": "19"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Favorite For User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/favorites/user/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"favorites",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/favorites/remove?userId=1&productId=18",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"favorites",
+								"remove"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "productId",
+									"value": "18"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Xem tb của user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/notifications/all?userId=1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"notifications",
+								"all"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Có thông báo\",\r\n    \"status\":\"read\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/notifications/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"notifications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Price",
+			"item": [
+				{
+					"name": "Create Price",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"BANGGIANIEMYETTHANG12\",\r\n    \"name\": \"Bảng giá niêm yết tháng 12\",\r\n    \"startDate\": \"2024-12-01\",\r\n    \"endDate\": \"2024-12-29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/prices",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/prices",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/prices/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"prices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/prices/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"prices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Price",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Bảng giá niêm yết tháng 11\",\r\n    \"startDate\": \"2024-11-01\",\r\n    \"endDate\": \"2024-11-29\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/prices/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"prices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PriceDetail",
+			"item": [
+				{
+					"name": "Create Price Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQyNDkxNjIsImlhdCI6MTczNDI0NTU2MiwianRpIjoiYmU0M2ZiOWEtZGFhYy00ZmJkLTg1ODMtYzA2MDQxNjA4MDEzIn0.umLgFZpRXWwq79yy_8ArxJK3p9j5kD2MXBznbDiUPKJhOOtq2Sjm4iVFEYoqvkTvZlK-YrMWCeVEHlcX-T8deA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n    \"productPriceId\":1,\r\n    \"productId\": 18,\r\n    \"priceValue\": 150.75\r\n   },\r\n   {\r\n    \"productPriceId\":1,\r\n    \"productId\": 20,\r\n    \"priceValue\": 200.20\r\n  }\r\n]\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/product-prices",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"product-prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProductPrice",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/product-prices",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"product-prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Price By Price Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/product-prices/by-price-id/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"product-prices",
+								"by-price-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product Price Detail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productPriceId\":1,\r\n    \"productId\": 1,\r\n    \"priceValue\": 200000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/product-prices/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"product-prices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Price Detail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{localJava}}/api/product-prices/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"product-prices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ws",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DiscountPrice",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQyNTEzNTQsImlhdCI6MTczNDI0Nzc1NCwianRpIjoiM2MwYzE4NjctZTZiNC00MWYwLTg5MDAtYjAwODY2ZTdjNDMyIn0.N-09QQOXYAI4F5BI92N8gtL_WXJG_eJJPZnu6bCqmIeJQUS3Kpm2x0sB1FtYlyb-O9O3hCMfVTFPSqhL-UNRQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 21,\r\n    \"discountRate\": 50,\r\n    \"startDate\": \"2024-12-01\",\r\n    \"endDate\": \"2024-12-31\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/discount-price",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"discount-price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQzNzU2NTIsImlhdCI6MTczNDM3MjA1MiwianRpIjoiNTI2N2E5MGMtMDZlNC00ZTgwLTk4MDgtZjUzZGE4NDdmNzBlIn0.lrMyg3Rc6WNQ9wIdilNaLScJ6SG-OF5dvzsi_Fi1gjFF4NgIYZXu8Cm01g2rtMayaFusDhJ7mHyB0uTJWvUQLQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 18,\r\n    \"discountRate\": 20.5,\r\n    \"startDate\": \"2024-12-01\",\r\n    \"endDate\": \"2024-12-31\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/discount-price",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"discount-price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get 1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQyNTEzNTQsImlhdCI6MTczNDI0Nzc1NCwianRpIjoiM2MwYzE4NjctZTZiNC00MWYwLTg5MDAtYjAwODY2ZTdjNDMyIn0.N-09QQOXYAI4F5BI92N8gtL_WXJG_eJJPZnu6bCqmIeJQUS3Kpm2x0sB1FtYlyb-O9O3hCMfVTFPSqhL-UNRQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 18,\r\n    \"discountRate\": 20.5,\r\n    \"startDate\": \"2024-12-01\",\r\n    \"endDate\": \"2024-12-31\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/discount-price/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"discount-price",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsInNjb3BlIjoiUk9MRV9ESVJFQ1RPUiIsImlzcyI6IndlYXJsdG5vdy5jb20iLCJleHAiOjE3MzQyNTEzNTQsImlhdCI6MTczNDI0Nzc1NCwianRpIjoiM2MwYzE4NjctZTZiNC00MWYwLTg5MDAtYjAwODY2ZTdjNDMyIn0.N-09QQOXYAI4F5BI92N8gtL_WXJG_eJJPZnu6bCqmIeJQUS3Kpm2x0sB1FtYlyb-O9O3hCMfVTFPSqhL-UNRQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": 18,\r\n    \"discountRate\": 20.5,\r\n    \"startDate\": \"2024-12-01\",\r\n    \"endDate\": \"2024-12-31\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localJava}}/api/discount-price/1",
+							"host": [
+								"{{localJava}}"
+							],
+							"path": [
+								"api",
+								"discount-price",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

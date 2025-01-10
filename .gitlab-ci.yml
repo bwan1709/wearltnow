@@ -1,0 +1,28 @@
+stages:
+  - build
+  - deploy
+build:
+  stage: build
+  timeout: 2h
+  variables:
+    GIT_STRATEGY: clone 
+    GIT_DEPTH: 0         
+  script:
+    - mvn clean install -DskipTests
+  tags:
+    - ci/cd
+  only:
+    - tags
+deploy:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - echo "1" | sudo -S cp target/wearItnow-0.0.1-SNAPSHOT.war /home/quan/datas/wearltnow
+    - echo "1" | sudo -S chown -R wearltnow. /home/quan/datas/wearltnow
+    - echo "1" | sudo -S sh -c "kill -9 \$(ps -ef | grep 'wearItnow-0.0.1-SNAPSHOT.war' | grep -v grep | awk '{print \$2}')"
+    - sudo su wearltnow -c "cd /home/quan/datas/wearltnow; nohup java -jar wearItnow-0.0.1-SNAPSHOT.war 2>&1 &"
+  tags:
+    - ci/cd
+  only:
+    - tags
